@@ -5,7 +5,7 @@ Built as a portfolio project for AWS Cloud Solutions Architect roles, with a
 deliberate focus on IAM least-privilege design and secure network segmentation.
 ## Architecture
 <p align="center">
-  <img src="./aws-3tier-architecture.png" alt="AWS 3-Tier Web Application Architecture" width="850">
+  <img src="https://raw.githubusercontent.com/ABISHEK911/aws-3tier-webapp/main/aws-3tier-architecture.png" alt="AWS 3-Tier Web Application Architecture" width="850">
 </p>
 **Tiers:**
 - **Web tier**: Application Load Balancer in public subnets — the only thing exposed to the internet.
