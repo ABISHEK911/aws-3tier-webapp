@@ -117,3 +117,9 @@ Building this surfaced a few AWS quirks worth knowing for interviews — the kin
 - Add a CI/CD pipeline (CodePipeline/CodeBuild) to deploy app code automatically
 - Enable Multi-AZ on RDS and document the failover behavior
 - Run the IAM role's policy through the AWS IAM Policy Simulator and document exactly what it can/cannot do
+
+## Author
+
+**Abishek P**
+
+AWS Solutions Architect Associate Aspirant
