@@ -3,14 +3,11 @@
 A production-style 3-tier architecture on AWS, built from scratch with Terraform.
 Built as a portfolio project for AWS Cloud Solutions Architect roles, with a
 deliberate focus on IAM least-privilege design and secure network segmentation.
-
 ## Architecture
 
 <p align="center">
-  <img src="./aws-3tier-architecture.png" alt="AWS 3-Tier Web Application Architecture" width="800">
+  <img src="./aws-3tier-architecture.png" alt="AWS 3-Tier Web Application Architecture" width="850">
 </p>
-```
-
 **Tiers:**
 - **Web tier**: Application Load Balancer in public subnets — the only thing exposed to the internet.
 - **App tier**: EC2 instances in an Auto Scaling Group, in private subnets, running behind the ALB. Reached via NAT Gateway for outbound updates only — no inbound internet access at all.
