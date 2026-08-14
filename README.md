@@ -7,7 +7,7 @@ deliberate focus on IAM least-privilege design and secure network segmentation.
 <p align="center">
   <img src="https://raw.githubusercontent.com/ABISHEK911/aws-3tier-webapp/main/aws-3tier-architecture.png" alt="AWS 3-Tier Web Application Architecture" width="850">
 </p>
- ##Tiers
+ ## Tiers
 
 - **Web tier:** Application Load Balancer in public subnets — the only component exposed to the internet.
 - **App tier:** EC2 instances in an Auto Scaling Group, deployed in private subnets behind the ALB. They use a NAT Gateway for outbound updates only, with no inbound internet access.
