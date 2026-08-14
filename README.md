@@ -4,7 +4,6 @@ A production-style 3-tier architecture on AWS, built from scratch with Terraform
 Built as a portfolio project for AWS Cloud Solutions Architect roles, with a
 deliberate focus on IAM least-privilege design and secure network segmentation.
 ## Architecture
-
 <p align="center">
   <img src="./aws-3tier-architecture.png" alt="AWS 3-Tier Web Application Architecture" width="850">
 </p>
