@@ -6,33 +6,9 @@ deliberate focus on IAM least-privilege design and secure network segmentation.
 
 ## Architecture
 
-```
-                              Internet
-                                 │
-                        ┌────────▼────────┐
-                        │   Internet GW    │
-                        └────────┬────────┘
-                                 │
-                    ┌────────────▼────────────┐
-                    │   Public Subnets (2 AZ)  │
-                    │   Application Load       │
-                    │   Balancer (HTTP:80)     │
-                    └────────────┬────────────┘
-                                 │ SG: alb-sg (0.0.0.0/0 -> :80)
-                                 │
-                    ┌────────────▼────────────┐
-                    │  Private App Subnets     │
-                    │  (2 AZ) — Auto Scaling   │
-                    │  Group of EC2 instances  │
-                    └────────────┬────────────┘
-                                 │ SG: app-sg (alb-sg only -> :80)
-                                 │
-                    ┌────────────▼────────────┐
-                    │  Private DB Subnets      │
-                    │  (2 AZ, no internet      │
-                    │  route) — RDS MySQL      │
-                    └──────────────────────────┘
-                                   SG: db-sg (app-sg only -> :3306)
+<p align="center">
+  <img src="./aws-3tier-architecture.png" alt="AWS 3-Tier Web Application Architecture" width="800">
+</p>
 ```
 
 **Tiers:**
