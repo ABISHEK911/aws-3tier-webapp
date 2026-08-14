@@ -7,11 +7,11 @@ deliberate focus on IAM least-privilege design and secure network segmentation.
 <p align="center">
   <img src="https://raw.githubusercontent.com/ABISHEK911/aws-3tier-webapp/main/aws-3tier-architecture.png" alt="AWS 3-Tier Web Application Architecture" width="850">
 </p>
-**Tiers:**
-- **Web tier**: Application Load Balancer in public subnets — the only thing exposed to the internet.
-- **App tier**: EC2 instances in an Auto Scaling Group, in private subnets, running behind the ALB. Reached via NAT Gateway for outbound updates only — no inbound internet access at all.
-- **Data tier**: RDS MySQL in private subnets with **no route to the internet whatsoever**. Only reachable from the app tier security group.
+### Tiers
 
+- **Web tier:** Application Load Balancer in public subnets — the only component exposed to the internet.
+- **App tier:** EC2 instances in an Auto Scaling Group, deployed in private subnets behind the ALB. They use a NAT Gateway for outbound updates only, with no inbound internet access.
+- **Data tier:** Amazon RDS MySQL in private subnets with no route to the internet. It is accessible only from the application tier security group.
 ## Why this design (interview talking points)
 
 - **Security groups are chained, not opened wide.** Each tier's SG only allows traffic from the SG of the tier in front of it (ALB → App → DB), never a raw CIDR block except for the ALB's public :80 listener.
